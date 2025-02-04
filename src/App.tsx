@@ -43,7 +43,7 @@ function App() {
             <div className="space-y-6">
               <div className="relative inline-block">
                 <img
-                  src="../ValentinesHero.jpg"
+                  src="https://img.freepik.com/free-photo/3d-birthday-celebration-cartoon-illustration_23-2151416914.jpg?t=st=1738652445~exp=1738656045~hmac=834f316ea9fa826d33d97af14001c100c709c616ba2f24753ea0d3f79898c752&w=996"
                   alt="Valentine's Day"
                   className="w-48 h-48 mx-auto rounded-full object-cover shadow-xl border-4 border-pink-400 animate-float"
                 />
