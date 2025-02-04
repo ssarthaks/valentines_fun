@@ -43,7 +43,7 @@ function App() {
             <div className="space-y-6">
               <div className="relative inline-block">
                 <img
-                  src="/ValentinesHero.jpg"
+                  src="../ValentinesHero.jpg"
                   alt="Valentine's Day"
                   className="w-48 h-48 mx-auto rounded-full object-cover shadow-xl border-4 border-pink-400 animate-float"
                 />
