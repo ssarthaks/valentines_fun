@@ -14,8 +14,19 @@ function App() {
   const [yesPressed, setYesPressed] = useState(false);
   const [isHoveringNo, setIsHoveringNo] = useState(false);
 
+  const noMessages = [
+    { text: "No", img: "https://img.freepik.com/free-photo/3d-birthday-celebration-cartoon-illustration_23-2151416914.jpg?t=st=1738652445~exp=1738656045~hmac=834f316ea9fa826d33d97af14001c100c709c616ba2f24753ea0d3f79898c752&w=996" },
+    { text: "Are you sure?", img: "https://media1.tenor.com/m/ASzgtObeCf4AAAAd/sad-cat.gif" },
+    { text: "Please Pookie! 💖", img: "https://media.tenor.com/X0Wj8BSnOW8AAAAi/mocha-crying.gif" },
+    { text: "Think about it! 😢", img: "https://media.tenor.com/DvWwqDSpr3MAAAAi/mochi-peach.gif" },
+    { text: "Please please please! 🥺", img: "https://media1.tenor.com/m/_fjHMmmdMLQAAAAC/peach-goma.gif" },
+    { text: "I'll be so sad 😭", img: "https://media.tenor.com/hlEd8VF5OpoAAAAi/cat-kitty.gif" },
+    { text: "You're breaking my heart! 💔", img: "https://media1.tenor.com/m/KYygGhaDCLQAAAAd/cat-crying.gif" },
+    { text: "Last chance! 🥹", img: "https://media.tenor.com/YeQt7LBc4yQAAAAi/mochi-cat.gif" },
+  ];
+
   const handleNoClick = () => {
-    setNoCount(prev => prev + 1);
+    setNoCount(prev => Math.min(prev + 1, noMessages.length - 1));
   };
 
   const handleYesClick = () => {
@@ -43,7 +54,7 @@ function App() {
             <div className="space-y-6">
               <div className="relative inline-block">
                 <img
-                  src="https://img.freepik.com/free-photo/3d-birthday-celebration-cartoon-illustration_23-2151416914.jpg?t=st=1738652445~exp=1738656045~hmac=834f316ea9fa826d33d97af14001c100c709c616ba2f24753ea0d3f79898c752&w=996"
+                  src={noMessages[noCount].img}
                   alt="Valentine's Day"
                   className="w-48 h-48 mx-auto rounded-full object-cover shadow-xl border-4 border-pink-400 animate-float"
                 />
@@ -89,9 +100,8 @@ function App() {
                   bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-full
                   transition-all duration-200 shadow-lg relative
                   ${isHoveringNo ? 'animate-shake' : ''}
-                `}
-              >
-                No
+                `} >
+                {noMessages[noCount].text}
                 <Cat className="absolute -top-3 -right-3 text-gray-400 animate-bounce" size={20} />
               </button>
             </div>
